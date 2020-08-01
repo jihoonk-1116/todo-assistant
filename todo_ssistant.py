@@ -4,19 +4,13 @@ from functions.show import show
 from functions.add import add
 from functions.check_off import check_off
 from functions.deletion import deletion
+from functions.parse_todos import parse
 
-def get_item(todos, n):
-    for k, v in todos.items():
-        if k[0] == n:
-            return k
-
-    return None
-
-todos = {}
 high = []
 medium = []
-with open("todo_list.json", "r") as todo_input:
-    todos = json.load(todo_input)["todos"]
+low = []
+checked_off = []
+todos = {"high": high, "medium": medium, "low": low, "checked_off": checked_off}
 
 
 while True:

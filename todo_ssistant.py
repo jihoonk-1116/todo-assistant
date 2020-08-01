@@ -13,6 +13,8 @@ def get_item(todos, n):
     return None
 
 todos = {}
+high = []
+medium = []
 with open("todo_list.json", "r") as todo_input:
     todos = json.load(todo_input)["todos"]
 

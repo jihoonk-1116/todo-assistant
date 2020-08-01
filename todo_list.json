@@ -1,0 +1,24 @@
+{
+    "todos": [
+        {
+            "todo": "wake up at 6AM",
+            "checked_off": true
+        },
+        {
+            "todo": "prep coffee",
+            "checked_off": false
+        },
+        {
+            "todo": "walk doggo",
+            "checked_off": false
+        },
+        {
+            "todo": "buy diapers",
+            "checked_off": false
+        },
+        {
+            "todo": "call girlfriend",
+            "checked_off": false
+        }
+    ]
+}

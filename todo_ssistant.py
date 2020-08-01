@@ -1,13 +1,26 @@
+import json
+
 from functions.show import show
 from functions.add import add
 from functions.check_off import check_off
 from functions.deletion import deletion
 
+def get_item(todos, n):
+    for k, v in todos.items():
+        if k[0] == n:
+            return k
+
+    return None
+
 todos = {}
-with open("todo_list.txt", "r") as todo_input:
-    lines = todo_input.readlines()
-    for line in lines:
-        todos[tuple(line.split(". "))] = True
+with open("todo_list.json", "r") as todo_input:
+    todos = json.load(todo_input)["todos"]
+
+counter = 1
+
+for todo in todos:
+    todo["number"] = counter
+    counter += 1
 
 while True:
     print("Do you want me to check off any from the list? Enter the corresponding number to check off.")
@@ -21,4 +34,7 @@ while True:
     if entered == 'd':
         todos = deletion(todos)
 
-print("Have a nice day!")
+print("Bye")
+
+show(todos)
+

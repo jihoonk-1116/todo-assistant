@@ -5,6 +5,4 @@ def deletion(todos):
         if i == enter:
             del todos[k]
             break
-    for k, v, c in todos:
-        print(c)
     return todos

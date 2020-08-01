@@ -15,11 +15,6 @@ todos = {}
 with open("todo_list.json", "r") as todo_input:
     todos = json.load(todo_input)["todos"]
 
-counter = 1
-
-for todo in todos:
-    todo["number"] = counter
-    counter += 1
 
 show(todos)
 print("Do you want me to check off any from the list? Enter the corresponding number to check off.")

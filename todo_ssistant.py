@@ -3,7 +3,7 @@ import json
 from functions.show import show
 from functions.add import add
 from functions.check_off import check_off
-from functions.deletion import deletion
+from functions.delete import delete
 
 def get_item(todos, n):
     for k, v in todos.items():
@@ -27,7 +27,7 @@ while True:
     if entered == 'x':
         break
     if entered == 'd':
-        todos = deletion(todos)
+        todos = delete(todos)
 
 print("Bye")
 

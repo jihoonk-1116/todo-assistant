@@ -2,23 +2,28 @@
     "todos": [
         {
             "todo": "wake up at 6AM",
-            "checked_off": true
+            "checked_off": true,
+            "priority": "high" 
         },
         {
             "todo": "prep coffee",
-            "checked_off": false
+            "checked_off": false,
+            "priority": "low" 
         },
         {
             "todo": "walk doggo",
-            "checked_off": false
+            "checked_off": false,
+            "priority": "high" 
         },
         {
             "todo": "buy diapers",
-            "checked_off": false
+            "checked_off": false,
+            "priority": "m" 
         },
         {
             "todo": "call girlfriend",
-            "checked_off": false
+            "checked_off": false,
+            "priority": "high" 
         }
     ]
 }

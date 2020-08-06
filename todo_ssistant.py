@@ -6,18 +6,20 @@ from functions.parse_todos import parse
 
 todos = parse("todo_list.json")
 
+# Do input validation here, priority letter & index
 
 while True:
-     print("Do you want me to check off any from the list? Enter the corresponding number to check off.")
-     print("If you want to exit this program, enter x")
-     show(todos)
-     entered = str(input())
-     if entered == '0':
-         todos = add(todos)
-     if entered == 'x':
-         break
-     if entered == 'd':
-         todos = delete(todos)
+    print("Do you want me to check off any from the list? Enter the corresponding number to check off.")
+    print("If you want to exit this program, enter x")
+    show(todos)
+    entered = str(input())
+    check_off(todos, entered)
+    if entered == '0':
+        todos = add(todos)
+    if entered == 'x':
+        break
+    if entered == 'd':
+        todos = delete(todos)
 
 print("Bye")
 

@@ -3,23 +3,30 @@ from functions.add import add
 from functions.check_off import check_off
 from functions.delete import delete
 from functions.parse_todos import parse
+from modules.check_off_mode import check_off_mode
 
 todos = parse("todo_list.json")
 
-# Do input validation here, priority letter & index
-
 while True:
-    print("Do you want me to check off any from the list? Enter the corresponding number to check off.")
-    print("If you want to exit this program, enter x")
-    show(todos)
-    entered = str(input())
-    check_off(todos, entered)
-    if entered == '0':
-        todos = add(todos)
-    if entered == 'x':
+# Do input validation here, priority letter & index
+    print("\nSelect an option:\n1. Show todos\n2. Check off\n3. Uncheck\n4. Add\n5. Delete\n6. Change priority")
+    entered = input()
+
+    # check_off(todos, entered)
+    if entered == '1':
+        show(todos)
+    elif entered == '2':
+        check_off_mode(todos)
+    elif entered == '3':
         break
-    if entered == 'd':
-        todos = delete(todos)
+    elif entered == '4':
+        break
+    elif entered == '5':
+        break
+    elif entered == '6':
+        break
+    else:
+        print("Invalid input. Please select a valid option")
 
 print("Bye")
 

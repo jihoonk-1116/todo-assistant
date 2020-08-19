@@ -1,0 +1,29 @@
+{
+    "todos": [
+        {
+            "context": "wake up at 6AM",
+            "checked_off": true,
+            "priority": "high" 
+        },
+        {
+            "context": "prep coffee",
+            "checked_off": false,
+            "priority": "low" 
+        },
+        {
+            "context": "walk doggo",
+            "checked_off": false,
+            "priority": "high" 
+        },
+        {
+            "context": "buy diapers",
+            "checked_off": false,
+            "priority": "m" 
+        },
+        {
+            "context": "call girlfriend",
+            "checked_off": false,
+            "priority": "high" 
+        }
+    ]
+}

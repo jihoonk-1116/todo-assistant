@@ -1,3 +1,5 @@
+import time
+
 from functions.check_off import check_off
 from functions.show import show
 from utils import general_utils
@@ -11,8 +13,14 @@ def check_off_mode(todos):
         if entered == "x":
             return
         else:
-            priority, index = general_utils.parse_and_validate_user_input(todos, entered)
+            try:
+                priority, index = general_utils.parse_and_validate_user_input(todos, entered)
+            except:
+                print("ERROR: Please enter a valid input.")
+                time.sleep(1)
+                continue
             if priority:
                 check_off(todos, priority, index)
             else:
-                print("ERROR: Please enter a valid input.\n")
+                print("ERROR: Please enter a valid input.")
+                time.sleep(1)

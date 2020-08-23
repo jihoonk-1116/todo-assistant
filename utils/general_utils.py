@@ -14,7 +14,7 @@ def parse_and_validate_user_input(todos, user_input):
     elif validate_user_input(todos, priority_map.get(priority), index):
         return (priority_map.get(priority), index - 1)
 
-    return (None, None)
+    return (None, -1)
 
 def validate_user_input(todos, todo_type, index):
     target_type = todos[todo_type]

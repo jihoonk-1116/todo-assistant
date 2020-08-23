@@ -6,6 +6,7 @@ from functions.parse_todos import parse
 from functions.save import save
 from modules.check_off_mode import check_off_mode
 from modules.uncheck_mode import uncheck_mode
+from modules.change_priority_mode import change_priority_mode
 from utils import general_utils
 import os
 
@@ -32,6 +33,10 @@ while True:
         break
     elif entered == '4':
         break
+    elif entered == '5':
+        general_utils.print_prompt()
+        change_priority_mode(todos)
+        general_utils.print_prompt()
     elif entered == 'x':
         save(todo_file_name, todos)
         break

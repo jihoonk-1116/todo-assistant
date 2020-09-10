@@ -1,50 +1,35 @@
-from functions.show import show
-from functions.parse_todos import parse
-from functions.save import save
-from modules.check_off_mode import check_off_mode
-from modules.uncheck_mode import uncheck_mode
-from modules.change_priority_mode import change_priority_mode
-from modules.remove_mode import remove_mode
-from modules.add_mode import add_mode
-from utils import general_utils
+import actions
 import os
+import json
+import time
 
-todo_file_name = "todo_list.json"
+todo_file = "todo_list.json"
 
-todos = parse(todo_file_name)
-os.system('cls||clear')
-general_utils.print_prompt()
+with open(todo_file, "r") as f:
+    todos = json.load(f)
 
 while True:
-    show(todos)
-# Do input validation here, priority letter & index
-    entered = general_utils.getch()
+    os.system('clear')
+    actions.show(todos)
+    print(f"{'Select an option (Press x to save and exit)':<59}")
+    print("1:Check\n2:Uncheck\n3.Add\n4:Delete")
+
+    entered = input("❯ ")
 
     if entered == '1':
-        general_utils.print_prompt()
-        check_off_mode(todos)
-        general_utils.print_prompt()
+        actions.check(todos)
     elif entered == '2':
-        general_utils.print_prompt()
-        uncheck_mode(todos)
-        general_utils.print_prompt()
+        actions.uncheck(todos)
     elif entered == '3':
-        general_utils.print_prompt()
-        add_mode(todos)
-        general_utils.print_prompt()
+        actions.add(todos)
     elif entered == '4':
-        general_utils.print_prompt()
-        remove_mode(todos)
-        general_utils.print_prompt()
-    elif entered == '5':
-        general_utils.print_prompt()
-        change_priority_mode(todos)
-        general_utils.print_prompt()
+        actions.remove(todos)
     elif entered == 'x':
-        #save(todo_file_name, todos)
+        with open(todo_file, "w") as output:
+            output.write(json.dumps(todos, indent=4))
         break
     else:
-        general_utils.print_prompt()
-        print("Invalid input. Please select a valid option\n")
-
-
+        print("ERROR: Invalid input. Please select a valid option")
+        time.sleep(1)
+        continue
+    

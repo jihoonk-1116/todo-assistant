@@ -10,6 +10,7 @@ def print_error():
     print_and_wait("ERROR: Invalid response. Please enter a valid input")
 
 def show(todos):
+    os.system('clear')
 
     start_range = datetime.now() - timedelta(days=5)
     
@@ -28,7 +29,6 @@ def show(todos):
 
 
 def remove(todos):
-    os.system('clear')
     show(todos)
     while True:
         entered = input("Which list? (1: Todo 2: Finished, entere 'x' to exit): ")
@@ -58,13 +58,12 @@ def remove(todos):
         context = todos.get(category)[index - 1].get("context")
 
         while True:
-            entered = input(f"Removing '{context}'. Proceed? (y/n): '")
+            entered = input(f"Removing '{context}'. Proceed? (y/n): ")
             if entered == 'n':
                 break
             elif entered == 'y':
                 del todos.get(category)[index - 1]
                 print_and_wait(f"'{context}' has been removed.")
-                os.system('clear')
                 show(todos)
                 break
             else:
@@ -72,7 +71,6 @@ def remove(todos):
     
 def uncheck(todos):
     while len(todos.get("checked")) > 0:
-        os.system("clear")
         show(todos)
         entered = input("Which one to uncheck? (Enter 'x' to exit): ")
 
@@ -95,7 +93,6 @@ def uncheck(todos):
 
 def check(todos):
     while len(todos.get("unchecked")) > 0:
-        os.system("clear")
         show(todos)
         entered = input("Which one to uncheck? (Enter 'x' to exit): ")
 
@@ -118,7 +115,6 @@ def check(todos):
 
 def add(todos):
     while True:
-        os.system('clear')
         show(todos)
         context = input("What do you need to do? (Enter 'x' to exit): ")
 

@@ -1,7 +1,9 @@
-{"todos": 
-    [   {"context": "walk doggo", "priority": "high", "checked_off": false}, 
-        {"context": "call girlfriend", "priority": "medium", "checked_off": false}, 
-        {"context": "prep coffee", "priority": "low", "checked_off": false},
-        {"context": "wake up at 6AM","checked_off": true,"priority": "high" }
-     ]
-    }
+{
+    "checked": [],
+    "unchecked": [
+        {
+            "context": "have fun",
+            "timestamp": "09/09/2020"
+        }
+    ]
+}

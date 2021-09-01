@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>HIGH</h1>
+        {%for todo in todos["high"]%}
+  
+        <li>{{todo.context}}</li> 
+
+        {%endfor%} 
+        <h1>MEDIUM</h1>
+        {%for todo in todos["medium"]%}
+  
+        <li>{{todo.context}}</li> 
+
+        {%endfor%} 
+        <h1>LOW</h1>
+        {%for todo in todos["low"]%}
+  
+        <li>{{todo.context}}</li> 
+
+        {%endfor%} 
+    </body>
+</html>
